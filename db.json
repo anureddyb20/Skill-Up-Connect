@@ -1,0 +1,25 @@
+{
+  "users": [],
+  "results": [],
+  "jobs": [
+    {
+      "id": 1,
+      "title": "Frontend Developer",
+      "company": "TechCorp",
+      "category": "Technology"
+    },
+    {
+      "id": 2,
+      "title": "Sales Representative",
+      "company": "SalesForce",
+      "category": "Sales & Marketing"
+    }
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "category": "Communication",
+      "text": "How to handle conflict?"
+    }
+  ]
+}
