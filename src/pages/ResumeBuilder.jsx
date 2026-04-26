@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
@@ -16,7 +16,8 @@ import {
   Type,
   FileText,
   ChevronDown,
-  ChevronRight
+  ChevronRight,
+  Save
 } from 'lucide-react';
 
 const ResumeBuilder = ({ user }) => {
@@ -40,6 +41,35 @@ const ResumeBuilder = ({ user }) => {
     projects: [],
     skills: user.roles?.length ? user.roles : []
   });
+
+  const [isSaving, setIsSaving] = useState(false);
+
+  useEffect(() => {
+    if (user?.id) {
+      fetch(`http://localhost:5000/api/resume/${user.id}`)
+        .then(res => res.json())
+        .then(data => {
+          if (data) setDetails(data);
+        })
+        .catch(err => console.error('Error fetching resume:', err));
+    }
+  }, [user?.id]);
+
+  const saveResume = async () => {
+    setIsSaving(true);
+    try {
+      const res = await fetch(`http://localhost:5000/api/resume/${user.id}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(details)
+      });
+      if (res.ok) alert('Resume progress saved!');
+    } catch (err) {
+      console.error('Error saving resume:', err);
+    } finally {
+      setIsSaving(false);
+    }
+  };
 
   const handleExport = async () => {
     const canvas = await html2canvas(resumeRef.current, { scale: 2 });
@@ -354,9 +384,14 @@ const ResumeBuilder = ({ user }) => {
         {/* Live Preview */}
         <div className={`preview-panel ${activeTab !== 'preview' ? 'hidden' : ''}`}>
           <div className="preview-actions">
-            <button className="btn btn-primary" onClick={handleExport}>
-              <Download size={18} /> Export as PDF
-            </button>
+            <div className="action-buttons">
+              <button className="btn btn-secondary" onClick={saveResume} disabled={isSaving}>
+                <Save size={18} /> {isSaving ? 'Saving...' : 'Save Profile'}
+              </button>
+              <button className="btn btn-primary" onClick={handleExport}>
+                <Download size={18} /> Export PDF
+              </button>
+            </div>
           </div>
           <div className="preview-canvas" ref={resumeRef}>
             <div className="resume-header">

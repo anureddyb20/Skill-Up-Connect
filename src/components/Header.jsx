@@ -1,11 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Bell, Search, Menu, X, CheckCircle, Info, Star } from 'lucide-react';
+import { Bell, Search, Menu, X, CheckCircle, Info, Star, Sun, Moon } from 'lucide-react';
 
 const Header = ({ user }) => {
   const navigate = useNavigate();
   const [showNotifications, setShowNotifications] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'dark');
+
+  useEffect(() => {
+    if (theme === 'light') {
+      document.documentElement.classList.add('light-theme');
+    } else {
+      document.documentElement.classList.remove('light-theme');
+    }
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(prev => prev === 'dark' ? 'light' : 'dark');
+  };
 
   const notifications = [
     { id: 1, title: 'New Course Recommended', type: 'success', time: '2m ago', desc: 'Communication skills course unlocked.' },
@@ -32,6 +46,14 @@ const Header = ({ user }) => {
       </div>
 
       <div className="header-right">
+        <button 
+          className="icon-btn glass-card theme-toggle" 
+          onClick={toggleTheme}
+          title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+        >
+          {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+        </button>
+
         <button className="mobile-menu-btn icon-btn glass-card">
           <Menu size={20} />
         </button>

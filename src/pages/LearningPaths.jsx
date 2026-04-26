@@ -2,14 +2,26 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Play, CheckCircle2, Clock, BookOpen, Star, Lock, ChevronRight, Target, Award, BrainCircuit, AlertCircle } from 'lucide-react';
 
-const LearningPaths = () => {
+const LearningPaths = ({ user }) => {
   const [score, setScore] = useState(0);
   const [startedCourses, setStartedCourses] = useState([]);
 
-  const handleStartCourse = (courseId) => {
+  const handleStartCourse = async (courseId) => {
     if (!startedCourses.includes(courseId)) {
-      setStartedCourses([...startedCourses, courseId]);
-      alert('Course started! You can now track your progress in this career roadmap.');
+      try {
+        const res = await fetch(`http://localhost:5000/api/courses/${user.id}`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ courseId })
+        });
+        const data = await res.json();
+        if (data.success) {
+          setStartedCourses(data.startedCourses);
+          alert('Course started! Your progress is now synced with your profile.');
+        }
+      } catch (err) {
+        console.error('Error saving progress:', err);
+      }
     } else {
       alert('Resuming course...');
     }
@@ -20,7 +32,14 @@ const LearningPaths = () => {
     if (savedResult) {
       setScore(JSON.parse(savedResult).score);
     }
-  }, []);
+    
+    if (user?.id) {
+      fetch(`http://localhost:5000/api/courses/${user.id}`)
+        .then(res => res.json())
+        .then(data => setStartedCourses(data))
+        .catch(err => console.error('Error fetching progress:', err));
+    }
+  }, [user?.id]);
 
   const jobRoles = [
     {
@@ -162,7 +181,7 @@ const LearningPaths = () => {
         .learning-header h1 {
           font-size: 2.5rem;
           margin-bottom: 0.5rem;
-          background: linear-gradient(135deg, #fff 0%, var(--text-muted) 100%);
+          background: linear-gradient(135deg, var(--text) 0%, var(--text-muted) 100%);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
         }

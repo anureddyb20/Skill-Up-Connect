@@ -23,7 +23,9 @@ if (!fs.existsSync(DB_PATH)) {
     ],
     questions: [
       { id: 1, category: 'Communication', text: 'How to handle conflict?' }
-    ]
+    ],
+    resumes: {},
+    startedCourses: {}
   };
   fs.writeFileSync(DB_PATH, JSON.stringify(initialData, null, 2));
 }
@@ -70,15 +72,44 @@ app.post('/api/results', (req, res) => {
   res.json({ success: true, result: newResult });
 });
 
+// Resume Endpoints
+app.get('/api/resume/:userId', (req, res) => {
+  const db = readDB();
+  res.json(db.resumes[req.params.userId] || null);
+});
+
+app.post('/api/resume/:userId', (req, res) => {
+  const db = readDB();
+  db.resumes[req.params.userId] = req.body;
+  writeDB(db);
+  res.json({ success: true });
+});
+
+// Course Progress Endpoints
+app.get('/api/courses/:userId', (req, res) => {
+  const db = readDB();
+  res.json(db.startedCourses[req.params.userId] || []);
+});
+
+app.post('/api/courses/:userId', (req, res) => {
+  const { courseId } = req.body;
+  const db = readDB();
+  const userId = req.params.userId;
+  if (!db.startedCourses[userId]) db.startedCourses[userId] = [];
+  if (!db.startedCourses[userId].includes(courseId)) {
+    db.startedCourses[userId].push(courseId);
+    writeDB(db);
+  }
+  res.json({ success: true, startedCourses: db.startedCourses[userId] });
+});
+
 // Recommendations Endpoint
 app.get('/api/recommendations/:userId', (req, res) => {
   const db = readDB();
   const user = db.users.find(u => u.id == req.params.userId);
-  const userResults = db.results.filter(r => r.userId == req.params.userId);
+  if (!user) return res.status(404).json({ message: 'User not found' });
   
-  // Logic: Recommend jobs based on roles
   const matchedJobs = db.jobs.filter(j => user.roles?.includes(j.category));
-  
   res.json({ jobs: matchedJobs, courses: [] });
 });
 

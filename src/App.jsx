@@ -10,6 +10,7 @@ import SkillsAssessment from './pages/SkillsAssessment';
 import ResultsPage from './pages/ResultsPage';
 import ResumeBuilder from './pages/ResumeBuilder';
 import LearningPaths from './pages/LearningPaths';
+import Jobs from './pages/Jobs';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -40,12 +41,13 @@ function App() {
           <Routes>
             <Route path="/" element={!user ? <LandingPage /> : <Navigate to="/dashboard" />} />
             <Route path="/login" element={<LoginPage setUser={setUser} />} />
-            <Route path="/dashboard" element={user ? <Dashboard user={user} /> : <Navigate to="/login" />} />
-            <Route path="/onboarding" element={user ? <Onboarding user={user} /> : <Navigate to="/login" />} />
-            <Route path="/assessment" element={user ? <SkillsAssessment user={user} /> : <Navigate to="/login" />} />
-            <Route path="/results" element={user ? <ResultsPage user={user} /> : <Navigate to="/login" />} />
-            <Route path="/resume" element={user ? <ResumeBuilder user={user} /> : <Navigate to="/login" />} />
-            <Route path="/learning" element={user ? <LearningPaths user={user} /> : <Navigate to="/login" />} />
+            <Route path="/dashboard" element={user ? <Dashboard user={user} /> : <Navigate to="/" />} />
+            <Route path="/onboarding" element={user ? <Onboarding user={user} /> : <Navigate to="/" />} />
+            <Route path="/assessment" element={user ? <SkillsAssessment user={user} /> : <Navigate to="/" />} />
+            <Route path="/results" element={user ? <ResultsPage user={user} /> : <Navigate to="/" />} />
+            <Route path="/resume" element={user ? <ResumeBuilder user={user} /> : <Navigate to="/" />} />
+            <Route path="/learning" element={user ? <LearningPaths user={user} /> : <Navigate to="/" />} />
+            <Route path="/jobs" element={user ? <Jobs user={user} /> : <Navigate to="/" />} />
           </Routes>
         </div>
       </div>
