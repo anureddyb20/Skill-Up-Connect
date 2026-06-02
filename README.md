@@ -143,6 +143,12 @@ If you'd like to run the app locally and explore the features:
 3. **Explore the Platform:**
    - **Skill-Up-Connect Dashboard:** `http://localhost:5173`
 
+## 🌍 Impact
+
+<hr />
+
+The gap between theoretical knowledge and practical application often hinders **countless talented individuals** from landing their dream roles. **Skill-Up-Connect** aims to bridge this gap by seamlessly integrating skills assessment, personalized learning paths, and an interactive resume builder, accelerating career growth and fostering a more capable workforce.
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome! 
