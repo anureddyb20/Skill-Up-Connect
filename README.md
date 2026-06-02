@@ -60,21 +60,14 @@ Built with a strong focus on an engaging and rewarding user experience:
 
 ## 🛠️ Tech Stack
 
-**Frontend:**
-- [React 19](https://react.dev/)
-- [Vite](https://vitejs.dev/)
-- [React Router DOM](https://reactrouter.com/)
-- [Framer Motion](https://www.framer.com/motion/) (Animations)
-- [Recharts](https://recharts.org/) (Data Visualization)
-- [Lucide React](https://lucide.dev/) (Icons)
-
-**Backend:**
-- [Node.js](https://nodejs.org/) & [Express](https://expressjs.com/) (`server.cjs`)
-- [Nodemon](https://nodemon.io/) (Development)
-
-**Utilities:**
-- `jspdf` & `html2canvas` (Resume generation)
-- `canvas-confetti` (Gamification)
+| Layer | Technology |
+| :--- | :--- |
+| 🌐 Frontend | React 19, Vite |
+| 🎨 Styling & Animation | Framer Motion, Lucide React |
+| 🧭 Routing | React Router DOM |
+| 📊 Data Visualization | Recharts |
+| ⚙️ Backend | Node.js, Express (`server.cjs`) |
+| 🧰 Utilities | `jspdf`, `html2canvas`, `canvas-confetti` |
 
 ## 🚀 Getting Started
 
