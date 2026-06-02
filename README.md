@@ -58,6 +58,17 @@ Built with a strong focus on an engaging and rewarding user experience:
 - **Smooth Animations:** Enjoy high-quality micro-interactions and page transitions powered by Framer Motion.
 - **Gamified Elements:** Celebrate your milestones and completed assessments with fun Confetti effects!
 
+## 🛠️ Tech Stack
+
+| Layer | Technology |
+| :--- | :--- |
+| 🌐 Frontend | React 19, Vite |
+| 🎨 Styling & Animation | Framer Motion, Lucide React |
+| 🧭 Routing | React Router DOM |
+| 📊 Data Visualization | Recharts |
+| ⚙️ Backend | Node.js, Express (`server.cjs`) |
+| 🧰 Utilities | `jspdf`, `html2canvas`, `canvas-confetti` |
+
 ## 🏗️ Project Architecture
 
 ```mermaid
@@ -79,17 +90,6 @@ flowchart LR
         API --> Features["⚙️ Core Features"]
     end
 ```
-
-## 🛠️ Tech Stack
-
-| Layer | Technology |
-| :--- | :--- |
-| 🌐 Frontend | React 19, Vite |
-| 🎨 Styling & Animation | Framer Motion, Lucide React |
-| 🧭 Routing | React Router DOM |
-| 📊 Data Visualization | Recharts |
-| ⚙️ Backend | Node.js, Express (`server.cjs`) |
-| 🧰 Utilities | `jspdf`, `html2canvas`, `canvas-confetti` |
 
 ## 🚀 Getting Started
 
