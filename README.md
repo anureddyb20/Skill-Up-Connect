@@ -62,21 +62,21 @@ Built with a strong focus on an engaging and rewarding user experience:
 
 ```mermaid
 flowchart LR
-    User((👤 User)) -. Interacts .-> Client
+    User(("👤 User")) -. Interacts .-> Client
 
-    subgraph Client [Client (React & Vite)]
+    subgraph Client ["Client (React & Vite)"]
         direction LR
-        UI[💻 User Interface] --> Router[🧭 React Router]
-        UI --> Motion[✨ Framer Motion & Recharts]
+        UI["💻 User Interface"] --> Router["🧭 React Router"]
+        UI --> Motion["✨ Framer Motion & Recharts"]
     end
 
     Client -- REST API --> Backend
 
-    subgraph Backend [Backend Server (Express & Node.js)]
+    subgraph Backend ["Backend Server (Express & Node.js)"]
         direction LR
-        API{API Routes} --> Auth[🔒 Auth Handlers]
-        API --> DB[(🗄️ db.json)]
-        API --> Features[⚙️ Core Features]
+        API{"API Routes"} --> Auth["🔒 Auth Handlers"]
+        API --> DB[("🗄️ db.json")]
+        API --> Features["⚙️ Core Features"]
     end
 ```
 
