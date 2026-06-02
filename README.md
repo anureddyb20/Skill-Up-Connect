@@ -153,5 +153,5 @@ The gap between theoretical knowledge and practical application often hinders **
 <hr />
 
 <div align="center">
-  <p>Developed with passion for a Collaborative & Innovative Future by <b>Team Vulpine Vision</b></p>
+  <p>Built with a vision for Continuous Learning & Professional Growth by <b>Team Vulpine Vision</b></p>
 </div>
