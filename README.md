@@ -134,26 +134,14 @@ npm run server    # Starts the Node/Express backend server
 npm run build
 ```
 
-## 📂 Project Structure
+## 🎯 Manual Usage
 
-```text
-skill-up-connect/
-├── public/              # Static public assets
-├── src/
-│   ├── assets/          # Images, fonts, etc.
-│   ├── components/      # Reusable UI components (Header, Sidebar)
-│   ├── data/            # Mock data, JSON structures, or constants
-│   ├── hooks/           # Custom React hooks
-│   ├── pages/           # Application pages (Dashboard, ResumeBuilder, Jobs, etc.)
-│   ├── utils/           # Helper functions
-│   ├── App.jsx          # Root component layout and routing
-│   ├── index.css        # Global styles
-│   └── main.jsx         # Application entry point
-├── server.cjs           # Express backend server script
-├── db.json              # Mock database/JSON server data
-├── package.json         # Project dependencies and scripts
-└── vite.config.js       # Vite configuration
-```
+If you'd like to run the app locally and explore the features:
+
+1. **Environment Setup:** Ensure your dependencies are installed and your local backend is ready.
+2. **Launch App:** Run `npm run dev:all` to start both the Vite development server and the Express backend.
+3. **Explore the Platform:**
+   - **Skill-Up-Connect Dashboard:** `http://localhost:5173`
 
 ## 🤝 Contributing
 
