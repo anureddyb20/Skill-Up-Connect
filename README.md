@@ -1,6 +1,16 @@
-# Skill-Up-Connect 🚀
+<div align="center">
+  <h1>Skill-Up-Connect</h1>
+  <p><em>Bridging the gap between learning and career growth — empowering you to upskill and land your dream role.</em></p>
+  <p>
+    <img src="https://img.shields.io/badge/Release-v1.0.0-yellow.svg" alt="Release" />
+    <img src="https://img.shields.io/badge/Status-Live-success.svg" alt="Status" />
+    <img src="https://img.shields.io/badge/UI-Modern%20Glass-blue.svg" alt="UI" />
+  </p>
+</div>
 
-Skill-Up-Connect is a comprehensive, interactive platform designed to bridge the gap between learning and career growth. By integrating skills assessment, personalized learning paths, an interactive resume builder, and a dedicated jobs portal, the platform empowers users to continuously upskill and connect with their dream roles. 
+<hr />
+
+Skill-Up-Connect is a comprehensive, interactive platform designed to integrate skills assessment, personalized learning paths, an interactive resume builder, and a dedicated jobs portal into one seamless experience.
 
 ## ✨ Key Features
 
