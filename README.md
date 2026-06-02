@@ -91,44 +91,48 @@ flowchart LR
     end
 ```
 
-## 🚀 Getting Started
+## 🛠️ Installation & Setup
 
 Follow these steps to set up the project locally on your machine.
 
-### Prerequisites
+### 🔗 Prerequisites
 
-- Node.js (v18 or higher)
-- npm (Node Package Manager)
+- Node.js (v18+)
+- npm
 
-### Installation
+### 1. Clone the Repository
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/anureddyb20/Skill-Up-Connect.git
-   cd Skill-Up-Connect
-   ```
+```bash
+git clone https://github.com/anureddyb20/Skill-Up-Connect.git
+cd Skill-Up-Connect
+```
 
-2. **Install dependencies:**
-   ```bash
-   npm install
-   ```
+### 2. Install Dependencies
 
-3. **Start the development server:**
-   You can run both the frontend (Vite) and backend (Express) concurrently using a single command:
-   ```bash
-   npm run dev:all
-   ```
-   
-   *Alternatively, you can run them separately:*
-   ```bash
-   npm run dev       # Starts the Vite frontend server
-   npm run server    # Starts the Node/Express backend server
-   ```
+```bash
+npm install
+```
 
-4. **Build for production:**
-   ```bash
-   npm run build
-   ```
+### 3. Start the Development Server
+
+You can run both the frontend (Vite) and backend (Express) concurrently using a single command:
+
+```bash
+npm run dev:all
+```
+
+Alternatively, you can run them separately:
+
+```bash
+npm run dev       # Starts the Vite frontend server
+npm run server    # Starts the Node/Express backend server
+```
+
+### 4. Build for Production
+
+```bash
+npm run build
+```
 
 ## 📂 Project Structure
 
