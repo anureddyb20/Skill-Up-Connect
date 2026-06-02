@@ -58,6 +58,28 @@ Built with a strong focus on an engaging and rewarding user experience:
 - **Smooth Animations:** Enjoy high-quality micro-interactions and page transitions powered by Framer Motion.
 - **Gamified Elements:** Celebrate your milestones and completed assessments with fun Confetti effects!
 
+## 🏗️ Project Architecture
+
+```mermaid
+flowchart LR
+    User((👤 User)) -. Interacts .-> Client
+
+    subgraph Client [Client (React & Vite)]
+        direction LR
+        UI[💻 User Interface] --> Router[🧭 React Router]
+        UI --> Motion[✨ Framer Motion & Recharts]
+    end
+
+    Client -- REST API --> Backend
+
+    subgraph Backend [Backend Server (Express & Node.js)]
+        direction LR
+        API{API Routes} --> Auth[🔒 Auth Handlers]
+        API --> DB[(🗄️ db.json)]
+        API --> Features[⚙️ Core Features]
+    end
+```
+
 ## 🛠️ Tech Stack
 
 | Layer | Technology |
