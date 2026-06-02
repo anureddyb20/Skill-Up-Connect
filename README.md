@@ -1,16 +1,100 @@
-# React + Vite
+# Skill-Up-Connect 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Skill-Up-Connect is a comprehensive, interactive platform designed to bridge the gap between learning and career growth. By integrating skills assessment, personalized learning paths, an interactive resume builder, and a dedicated jobs portal, the platform empowers users to continuously upskill and connect with their dream roles. 
 
-Currently, two official plugins are available:
+## ✨ Key Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Personalized Dashboard:** Track your learning progress, skills, and activities with interactive charts built using Recharts.
+- **Skills Assessment:** Evaluate your current knowledge through dynamic quizzes and get insightful feedback on a detailed results page.
+- **Learning Paths:** Custom-tailored courses and modules to help you master new domains.
+- **Interactive Resume Builder:** An integrated resume creator with PDF export capabilities (powered by `jspdf` and `html2canvas`).
+- **Jobs Portal:** Discover and apply for the latest job opportunities matching your skill profile.
+- **Smooth Animations:** High-quality micro-interactions, page transitions, and engaging UI elements powered by Framer Motion.
+- **Gamified Elements:** Celebrate your milestones and completed assessments with Confetti effects!
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**Frontend:**
+- [React 19](https://react.dev/)
+- [Vite](https://vitejs.dev/)
+- [React Router DOM](https://reactrouter.com/)
+- [Framer Motion](https://www.framer.com/motion/) (Animations)
+- [Recharts](https://recharts.org/) (Data Visualization)
+- [Lucide React](https://lucide.dev/) (Icons)
 
-## Expanding the ESLint configuration
+**Backend:**
+- [Node.js](https://nodejs.org/) & [Express](https://expressjs.com/) (`server.cjs`)
+- [Nodemon](https://nodemon.io/) (Development)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+**Utilities:**
+- `jspdf` & `html2canvas` (Resume generation)
+- `canvas-confetti` (Gamification)
+
+## 🚀 Getting Started
+
+Follow these steps to set up the project locally on your machine.
+
+### Prerequisites
+
+- Node.js (v18 or higher)
+- npm (Node Package Manager)
+
+### Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/anureddyb20/Skill-Up-Connect.git
+   cd Skill-Up-Connect
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server:**
+   You can run both the frontend (Vite) and backend (Express) concurrently using a single command:
+   ```bash
+   npm run dev:all
+   ```
+   
+   *Alternatively, you can run them separately:*
+   ```bash
+   npm run dev       # Starts the Vite frontend server
+   npm run server    # Starts the Node/Express backend server
+   ```
+
+4. **Build for production:**
+   ```bash
+   npm run build
+   ```
+
+## 📂 Project Structure
+
+```text
+skill-up-connect/
+├── public/              # Static public assets
+├── src/
+│   ├── assets/          # Images, fonts, etc.
+│   ├── components/      # Reusable UI components (Header, Sidebar)
+│   ├── data/            # Mock data, JSON structures, or constants
+│   ├── hooks/           # Custom React hooks
+│   ├── pages/           # Application pages (Dashboard, ResumeBuilder, Jobs, etc.)
+│   ├── utils/           # Helper functions
+│   ├── App.jsx          # Root component layout and routing
+│   ├── index.css        # Global styles
+│   └── main.jsx         # Application entry point
+├── server.cjs           # Express backend server script
+├── db.json              # Mock database/JSON server data
+├── package.json         # Project dependencies and scripts
+└── vite.config.js       # Vite configuration
+```
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome! 
+Feel free to check the [issues page](https://github.com/anureddyb20/Skill-Up-Connect/issues) if you want to contribute.
+
+## 📄 License
+
+This project is licensed under the MIT License.
