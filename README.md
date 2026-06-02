@@ -10,6 +10,8 @@
 
 <hr />
 
+## 📖 Overview
+
 Skill-Up-Connect is a comprehensive, interactive platform designed to integrate skills assessment, personalized learning paths, an interactive resume builder, and a dedicated jobs portal into one seamless experience.
 
 ## ✨ Key Features
