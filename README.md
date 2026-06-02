@@ -149,11 +149,9 @@ If you'd like to run the app locally and explore the features:
 
 The gap between theoretical knowledge and practical application often hinders **countless talented individuals** from landing their dream roles. **Skill-Up-Connect** aims to bridge this gap by seamlessly integrating skills assessment, personalized learning paths, and an interactive resume builder, accelerating career growth and fostering a more capable workforce.
 
-## 🤝 Contributing
+<br />
+<hr />
 
-Contributions, issues, and feature requests are welcome! 
-Feel free to check the [issues page](https://github.com/anureddyb20/Skill-Up-Connect/issues) if you want to contribute.
-
-## 📄 License
-
-This project is licensed under the MIT License.
+<div align="center">
+  <p>Developed with passion for a Collaborative & Innovative Future by <b>Team Vulpine Vision</b></p>
+</div>
